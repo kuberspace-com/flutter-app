@@ -1,0 +1,12 @@
+build
+./build
+
+windows
+web
+test
+macos
+linux
+.gradle
+.DS_Store
+.git
+.dart_tool
