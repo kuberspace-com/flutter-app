@@ -1,6 +1,8 @@
+import 'package:convrsy/components/hyperlink.dart';
 import 'package:flutter/material.dart';
 
-import '../utility_wigits/wide_round_btn.dart';
+import '../components/round_button.dart';
+import '../components/round_input_field.dart';
 
 
 class Login extends StatefulWidget {
@@ -41,27 +43,17 @@ class _LoginState extends State<Login> {
               child:  SizedBox( 
                 width: MediaQuery.of(context).size.width * 0.80,
                 height: 50.0,
-                child: WideRoundedButton(
-                  child: TextFormField(
-                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
-                    decoration: const InputDecoration(
-                                    enabledBorder: UnderlineInputBorder(      
-                      borderSide: BorderSide(color: Colors.transparent),   
-                      ),  
-                      focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
-                   ),  
-                      hintText: 'Email or Username',
-                    ),
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
-                  ) 
-                )
-              ),
+                child: RoundInputField(
+                  hintText: "Email or Username",
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Email/Username cannot be empty';
+                    }
+                    // regex validator or email validation
+
+                    return null;
+                  })
+              )
             ),
 
             Padding(
@@ -69,26 +61,14 @@ class _LoginState extends State<Login> {
               child:  SizedBox( 
                 width: MediaQuery.of(context).size.width * 0.80,
                 height: 50.0,
-                child: WideRoundedButton(
-                  child: TextFormField(
-                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
-                    decoration: const InputDecoration(
-                                    enabledBorder: UnderlineInputBorder(      
-                      borderSide: BorderSide(color: Colors.transparent),   
-                      ),  
-                      focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent),
-                   ),  
-                      hintText: 'Password',
-                    ),
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
-                  ) 
-                )
+                child: RoundInputField(
+                  hintText: "Password",
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password cannot be empty';
+                    }
+                    return null;
+                  })
               ),
             ),
 
@@ -97,29 +77,13 @@ class _LoginState extends State<Login> {
               child:  SizedBox( 
                 width: MediaQuery.of(context).size.width * 0.80,
                 height: 50.0,
-                child: TextButton(
-                  onPressed: () {}, 
-                  style: TextButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(1, 98, 129, 1), 
-                    shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                    side: BorderSide(color: Colors.white, width: 0.5))
-                  ),
-                  child: const Text(
-                    "Sign in",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 19
-                    )
-                  )
-                ),
+                child: const RoundButton(text: 'Sign in', background: Colors.blue,)
               ),
             ),
             
-            GestureDetector(child: const Text("Forgot Password?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
+              HyperLink(text: "Forgot Password?", tap: (){
+                  Navigator.pushNamed(context, "/forgot-password");
+                }),
           
           ],
         ),
@@ -133,7 +97,9 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
                 const Text("Need an account? ", textAlign: TextAlign.center,),
-                GestureDetector(child: const Text("Create Account?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
+                HyperLink(text: "Create Account", tap: (){
+                  Navigator.pushNamed(context, "/create-account");
+                }),
             ])
             ))
   ]

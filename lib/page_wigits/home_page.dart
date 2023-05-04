@@ -1,3 +1,4 @@
+import 'package:convrsy/components/round_button.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -50,47 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 child:             SizedBox( 
               width: MediaQuery.of(context).size.width * 0.80,
               height: 50.0,
-              child: TextButton(
-                onPressed: () {
-                  routeToLoginPage();
-                }, 
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(1, 98, 129, 1), 
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                    side: BorderSide(color: Colors.white, width: 0.5))),
-                child: const Text(
-                  "Login",
-                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                  ))
-                ),
+              child:  RoundButton(text: "Login", background: Colors.blue, tap: () => {
+                     Navigator.pushNamed(context, "/login")
+              }),
             ),
             ),
                         SizedBox( 
               width: MediaQuery.of(context).size.width * 0.80,
               height: 50.0,
-              child: TextButton(
-                onPressed: () {
-                  routeToLoginPage();
-                }, 
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(5, 5, 1, 1), 
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                    side: BorderSide(color: Colors.white, width: 0.5))),
-                child: const Text(
-                  "Sign up",
-                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                  ))
-                ),
+              child: RoundButton(text: "Sign up", background: Colors.black, tap: () => {
+                     Navigator.pushNamed(context, "/signup")
+              }),
             ),
           ],
         ),
