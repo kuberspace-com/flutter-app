@@ -14,9 +14,9 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
+    final GlobalKey<FormState> login = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> login = GlobalKey<FormState>();
 
     return  Scaffold(
       body: SizedBox(
