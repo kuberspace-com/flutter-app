@@ -1,7 +1,6 @@
 import 'package:convrsy/page_wigits/create_account.dart';
 import 'package:convrsy/page_wigits/forgot_password.dart';
 import 'package:convrsy/page_wigits/login_page.dart';
-import 'package:convrsy/page_wigits/signup_page.dart';
 import 'package:convrsy/splashes/home_splash.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +22,8 @@ class MyApp extends StatelessWidget {
       home: const Splash(),
       routes: {
       '/login': (context) => const Login(),
-      '/signup': (context) => const Signup(),
       '/create-account':(context) => const CreateAccount(),
       '/forgot-password':(context) => const ForgotPassword()
-
     },
     );
   }

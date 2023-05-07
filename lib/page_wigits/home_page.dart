@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: MediaQuery.of(context).size.width * 0.80,
               height: 50.0,
               child: RoundButton(text: "Sign up", background: Colors.black, tap: () => {
-                     Navigator.pushNamed(context, "/signup")
+                     Navigator.pushNamed(context, "/create-account")
               }),
             ),
           ],

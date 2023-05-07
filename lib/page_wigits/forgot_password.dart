@@ -9,9 +9,9 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
 
+    final GlobalKey<FormState> login = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> login = GlobalKey<FormState>();
 
     return  Scaffold(
       body: SizedBox(
