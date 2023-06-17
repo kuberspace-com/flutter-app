@@ -25,8 +25,6 @@ class NavBar extends StatelessWidget {
               height: 45,
               child: IconButton(
                   onPressed: () {
-                    // ignore: avoid_print
-                    print("Tapped");
                     Navigator.pushNamed(context, "/login");
                   },
                   icon: svgIcon)),
