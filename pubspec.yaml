@@ -59,4 +59,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/post/
+    - assets/image-carousel/
+
 

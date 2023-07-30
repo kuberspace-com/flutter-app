@@ -1,4 +1,5 @@
 import 'package:flutter_app/page_wigits/create_account.dart';
+import 'package:flutter_app/page_wigits/entry_page.dart';
 import 'package:flutter_app/page_wigits/forgot_password.dart';
 import 'package:flutter_app/page_wigits/login_page.dart';
 import 'package:flutter_app/splashes/home_splash.dart';
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ErrorWidget.builder = (FlutterErrorDetails details) => Container();
+
     return MaterialApp(
       title: 'Flutter',
       theme: ThemeData(
@@ -23,7 +26,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const Login(),
         '/create-account': (context) => const CreateAccount(),
-        '/forgot-password': (context) => const ForgotPassword()
+        '/forgot-password': (context) => const ForgotPassword(),
+        '/entry': (context) => const EntryPage()
       },
     );
   }

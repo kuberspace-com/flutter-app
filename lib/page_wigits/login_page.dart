@@ -66,7 +66,8 @@ class _LoginState extends State<Login> {
                                   width:
                                       MediaQuery.of(context).size.width * 0.80,
                                   height: 50.0,
-                                  child: const RoundButton(
+                                  child: RoundButton(
+                                    tap: () => {Navigator.pushNamed(context, "/entry")},
                                     text: 'Sign in',
                                     background: Colors.blue,
                                   )),
