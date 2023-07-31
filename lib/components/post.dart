@@ -1,11 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/abbreviated_date.dart';
 import 'package:flutter_app/components/image_carousel.dart';
 import 'package:flutter_app/components/post_icons.dart';
 import 'package:flutter_app/components/rating.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_app/components/text.dart';
 
 class Post extends StatelessWidget {
   final List<String> postImageURLs;
@@ -32,21 +30,26 @@ class Post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topCenter,
         width: MediaQuery.of(context).size.width,
-        height: 300,
         decoration: const BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.white, width: 2)),
-            color: Colors.orange),
-        child: Row(children: [
+            color: Colors.black),
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
           Expanded(
               flex: 1,
               child: Container(
                   decoration: const BoxDecoration(
                       border: Border(
                           right: BorderSide(color: Colors.black, width: 2)),
-                      color: Colors.red),
+                      color: Colors.black),
                   alignment: Alignment.center,
-                  child: Column(children: [
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                     Padding(
                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                         child: SizedBox(
@@ -66,7 +69,7 @@ class Post extends StatelessWidget {
                       children: [
                         Padding(
                             padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
-                            child: Text(companyName)),
+                            child: TextComponent(companyName, fontSize: 14,)),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,7 +91,7 @@ class Post extends StatelessWidget {
                                         onPressed: null,
                                         icon: Icon(
                                           Icons.more_horiz,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                           size: 28.0,
                                         ),
                                       )))
@@ -99,21 +102,23 @@ class Post extends StatelessWidget {
                 FractionallySizedBox(
                     widthFactor: 0.9,
                     child: Container(
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            border:
-                                Border.all(color: Colors.transparent, width: 3),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(15),
-                            )),
                         height: 200,
                         constraints: const BoxConstraints(maxHeight: 200),
                         // constraints: const BoxConstraints(maxHeight: 100),
                         // color: Colors.blue,
                         child: ImageCarousel(images: postImageURLs))),
-                Container(
-
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                     Padding(
+                       padding: EdgeInsets.all(5),
+                       child: TextComponent("Lego Icons NASA Space Shuttle Discovery 10283 Model Building Set - Spaceship", textAlign: TextAlign.center)
+                     ),
+                    Padding(
+                      padding: EdgeInsets.all(5),
+                      child: TextComponent("price: \$323.33")
+                    )
+                  ],
                 ),
                 PostIcons() // icons
               ],

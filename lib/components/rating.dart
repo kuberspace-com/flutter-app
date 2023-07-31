@@ -1,6 +1,7 @@
 import 'dart:developer' as developer;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/text.dart';
 
 class RatingWidget extends StatelessWidget {
   final double value;
@@ -56,7 +57,7 @@ class RatingWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(value.toString(), style: const TextStyle(fontSize: 8)),
+          TextComponent(value.toString(), fontSize: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: stars

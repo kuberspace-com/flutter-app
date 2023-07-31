@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/text.dart';
 
 class AbbreviatedDate extends StatelessWidget {
   final DateTime value;
@@ -11,27 +12,27 @@ class AbbreviatedDate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime currentDateTime = DateTime.now();
-    int yearsPassed = currentDateTime.year - this.value.year;
-    int monthsPassed = currentDateTime.month - this.value.month;
-    int daysPassed = currentDateTime.day - this.value.day;
-    int hoursPassed = currentDateTime.hour - this.value.hour;
-    int minutesPassed = currentDateTime.minute - this.value.minute;
-    int secondsPassed = currentDateTime.second - this.value.second;
+    int yearsPassed = currentDateTime.year - value.year;
+    int monthsPassed = currentDateTime.month - value.month;
+    int daysPassed = currentDateTime.day - value.day;
+    int hoursPassed = currentDateTime.hour - value.hour;
+    int minutesPassed = currentDateTime.minute - value.minute;
+    int secondsPassed = currentDateTime.second - value.second;
 
     if (yearsPassed > 0){
-      return Text("${yearsPassed}y");
+      return TextComponent("${yearsPassed}y");
     } else if (monthsPassed > 0){
-      return Text("${monthsPassed}mo");
+      return TextComponent("${monthsPassed}mo");
     } else if (daysPassed > 0){
-      return Text("${daysPassed}d");
+      return TextComponent("${daysPassed}d");
     } else if (hoursPassed > 0){
-      return Text("${hoursPassed}h");
+      return TextComponent("${hoursPassed}h");
     } else if (minutesPassed > 0){
-      return Text("${minutesPassed}m");
+      return TextComponent("${minutesPassed}m");
     } else if (secondsPassed > 0){
-      return Text("${secondsPassed}s");
+      return TextComponent("${secondsPassed}s");
     } else {
-      return const Text("0s");
+      return const TextComponent("0s");
     }
   }
 }
