@@ -78,13 +78,11 @@ class _ImageCarouselState extends State<ImageCarousel> {
 
   void scrollToNextImage(BoxConstraints constraints) {
     setState(() {
-      print(_currentIndex);
       if (_currentIndex >= (widget.images.length -1)) {
         _currentIndex = 0;
       } else {
         _currentIndex = _currentIndex + 1;
       }
-      print(_currentIndex);
       _scrollController.animateTo(
         _currentIndex * constraints.maxWidth , // 120 = 2 * margin (10 * 2) and 20 padding (10 * 2)
         duration: const Duration(milliseconds: 500),

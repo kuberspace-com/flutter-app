@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/main_header_nav_bar.dart';
 import 'package:flutter_app/components/post.dart';
@@ -52,9 +50,9 @@ class _EntryPageState extends State<EntryPage> {
                   ),
                   Post(
                     postImageURLs: const [
-                      "assets/image-carousel/img1.png",
-                      "assets/image-carousel/img2.png",
-                      "assets/image-carousel/img3.png"
+                      "assets/image-carousel/shoe1.png",
+                      "assets/image-carousel/shoe2.png",
+                      "assets/image-carousel/shoe3.png"
                     ],
                     dateTime: DateTime.parse('2023-07-20 20:18:04Z'),
                     companyImage: "assets/post/nike.png",
@@ -78,9 +76,9 @@ class _EntryPageState extends State<EntryPage> {
                   ),
                   Post(
                     postImageURLs: const [
-                      "assets/image-carousel/img1.png",
-                      "assets/image-carousel/img2.png",
-                      "assets/image-carousel/img3.png"
+                      "assets/image-carousel/shoe1.png",
+                      "assets/image-carousel/shoe2.png",
+                      "assets/image-carousel/shoe3.png"
                     ],
                     dateTime: DateTime.parse('2023-07-23 12:03:23Z'),
                     companyImage: "assets/post/nike.png",
